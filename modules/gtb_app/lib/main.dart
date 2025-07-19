@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gtb_app/env/environment_config.dart';
+import 'package:gtb_core/gtb_core.dart';
 
 void main() async {
   await runZonedGuarded(() async {
@@ -19,6 +21,9 @@ final class GtbApp extends StatefulWidget {
 }
 
 class _GtbAppState extends State<GtbApp> {
+  late final ApiClient _apiClient;
+  late final EnvironmentConfig _environmentConfig;
+
   @override
   void initState() {
     super.initState();
@@ -33,6 +38,16 @@ class _GtbAppState extends State<GtbApp> {
   Future<void> initializeApp() async {}
 
   Future<void> _initializeModules() async {}
+
+  void _setupApiClient(EnvironmentConfig environmentConfig) {
+    final dio = Dio()
+      ..options.baseUrl = environmentConfig.baseUrl
+      ..options.connectTimeout = Duration(milliseconds: environmentConfig.httpTimeout)
+      ..options.sendTimeout = Duration(milliseconds: environmentConfig.httpTimeout)
+      ..options.receiveTimeout = Duration(milliseconds: environmentConfig.httpTimeout);
+
+    _apiClient = GtbApiClient(dio: dio);
+  }
 
   @override
   Widget build(BuildContext context) {

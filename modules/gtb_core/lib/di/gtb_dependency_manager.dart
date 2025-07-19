@@ -1,5 +1,5 @@
+import 'package:get_it/get_it.dart';
 import 'package:gtb_core/contracts/dependency_manager.dart';
-import 'package:gtb_dependencies/gtb_dependencies.dart';
 
 final class GtbDependencyManager implements DependencyManager {
   const GtbDependencyManager._();
