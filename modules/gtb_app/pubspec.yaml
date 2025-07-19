@@ -15,7 +15,7 @@ dependencies:
     git:
       url: https://github.com/smiqueias/gtb_digital
       ref: dev
-      path: packages/gtb_core
+      path: modules/gtb_core
 
 
 dev_dependencies:
