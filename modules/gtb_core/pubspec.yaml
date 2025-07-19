@@ -11,11 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  gtb_dependencies:
-    git:
-      url: https://github.com/smiqueias/gtb_digital
-      ref: dev
-      path: modules/gtb_dependencies
+  get_it: ^8.0.3
+  dio: 5.8.0+1
 
 dev_dependencies:
   flutter_test:
