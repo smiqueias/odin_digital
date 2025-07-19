@@ -14,8 +14,13 @@ enum Environment {
 final class EnvironmentConfig {
   final String baseUrl;
   final Environment environment;
+  final int httpTimeout;
 
-  EnvironmentConfig({required this.baseUrl, this.environment = Environment.prd});
+  EnvironmentConfig({
+    required this.baseUrl,
+    this.environment = Environment.prd,
+    this.httpTimeout = 60000,
+  });
 
   factory EnvironmentConfig.dev() => EnvironmentConfig(
     baseUrl: 'https://6266f62263e0f382568936e4.dev.mockapi.io/',
