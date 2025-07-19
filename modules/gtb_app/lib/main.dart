@@ -35,7 +35,10 @@ class _GtbAppState extends State<GtbApp> {
     super.dispose();
   }
 
-  Future<void> initializeApp() async {}
+  Future<void> initializeApp() async {
+    _environmentConfig = EnvironmentConfig.config;
+    _setupApiClient(_environmentConfig);
+  }
 
   Future<void> _initializeModules() async {}
 

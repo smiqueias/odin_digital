@@ -98,15 +98,6 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  gtb_dependencies:
-    dependency: transitive
-    description:
-      path: "modules/gtb_dependencies"
-      ref: dev
-      resolved-ref: "835a674f9664027b00bb7b61e6efd8655c763fdc"
-      url: "https://github.com/smiqueias/gtb_digital"
-    source: git
-    version: "0.0.1"
   http_parser:
     dependency: transitive
     description:

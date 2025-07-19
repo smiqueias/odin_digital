@@ -16,25 +16,25 @@ final class EnvironmentConfig {
   final Environment environment;
   final int httpTimeout;
 
-  EnvironmentConfig({
+  EnvironmentConfig._({
     required this.baseUrl,
     this.environment = Environment.prd,
     this.httpTimeout = 60000,
   });
 
-  factory EnvironmentConfig.dev() => EnvironmentConfig(
+  factory EnvironmentConfig.dev() => EnvironmentConfig._(
     baseUrl: 'https://6266f62263e0f382568936e4.dev.mockapi.io/',
     environment: Environment.dev,
   );
-  factory EnvironmentConfig.uat() => EnvironmentConfig(
+  factory EnvironmentConfig.uat() => EnvironmentConfig._(
     baseUrl: 'https://6266f62263e0f382568936e4.uat.mockapi.io/',
     environment: Environment.dev,
   );
   factory EnvironmentConfig.prd() =>
-      EnvironmentConfig(baseUrl: 'https://6266f62263e0f382568936e4.mockapi.io/');
+      EnvironmentConfig._(baseUrl: 'https://6266f62263e0f382568936e4.mockapi.io/');
 
-  EnvironmentConfig get config {
-    final envString = String.fromEnvironment('ENV', defaultValue: Environment.prd.name);
+  static EnvironmentConfig get config {
+    const envString = String.fromEnvironment('ENV', defaultValue: 'prd');
     final env = Environment.fromValue(envString);
 
     return switch (env) {
