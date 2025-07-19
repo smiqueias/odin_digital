@@ -1,0 +1,11 @@
+name: gtb_digital
+
+packages:
+  - modules/*
+
+command:
+  bootstrap:
+    runPubGetInParallel: true
+
+    environment:
+      sdk: ^3.8.1
