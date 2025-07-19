@@ -1,16 +1,41 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-void main() {
-  runApp(const MainApp());
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() async {
+  await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    runApp(const GtbApp());
+  }, (error, stack) {});
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+final class GtbApp extends StatefulWidget {
+  const GtbApp({super.key});
+
+  @override
+  State<GtbApp> createState() => _GtbAppState();
+}
+
+class _GtbAppState extends State<GtbApp> {
+  @override
+  void initState() {
+    super.initState();
+    initializeApp();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  Future<void> initializeApp() async {}
+
+  Future<void> _initializeModules() async {}
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
-    );
+    return const Placeholder();
   }
 }
