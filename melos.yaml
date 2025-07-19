@@ -12,6 +12,15 @@ command:
       flutter: ">=3.32.7"
 
 scripts:
+
   pub_get:
-    description: Get packages from pub.dev
+    description: Get all packages/modules
     run: flutter pub get
+
+  pub_upgrade:
+    description: Upgrade all packages/modules
+    run: flutter pub upgrade
+
+  clean:
+    description: Clean all packages/modules
+    run: flutter clean
