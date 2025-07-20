@@ -51,9 +51,7 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
   }
 
   Future<void> _setupModules() async {
-    _gtbHomeModule = GtbHomeModule(
-      baseUrl: _environment.baseUrl,
-    );
+    _gtbHomeModule = GtbHomeModule(baseUrl: _environment.baseUrl);
 
     await registerModulesDependencies();
   }
@@ -89,10 +87,7 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
         builder: (context) {
           return MaterialApp(
             title: 'GTB Digital',
-            theme: ThemeData(
-              fontFamily: FontFamily.fontFamily,
-              useMaterial3: false,
-            ),
+            theme: ThemeData(fontFamily: FontFamily.fontFamily, useMaterial3: false),
             navigatorKey: navigatorKey,
             initialRoute: SplashScreen.routeName,
             routes: gtbRoutes,
@@ -104,8 +99,6 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
 
   @override
   List<RegisterModule> get modules {
-    return [
-      _gtbHomeModule,
-    ];
+    return [_gtbHomeModule];
   }
 }

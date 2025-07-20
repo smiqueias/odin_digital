@@ -27,11 +27,14 @@ dependencies:
       ref: dev
       path: modules/gtb_home
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  gtb_analysis_options:
+    git:
+      url: https://github.com/smiqueias/gtb_digital
+      ref: dev
+      path: modules/gtb_analysis_options
 
 flutter:
   uses-material-design: true

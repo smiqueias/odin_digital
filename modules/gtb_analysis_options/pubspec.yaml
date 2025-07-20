@@ -1,4 +1,4 @@
-name: gtb_teatro
+name: gtb_analysis_options
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
@@ -11,13 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  gap: ^3.0.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  gtb_analysis_options:
-    git:
-      url: https://github.com/smiqueias/gtb_digital
-      ref: dev
-      path: modules/gtb_analysis_options
+flutter:
