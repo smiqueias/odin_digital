@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gtb_app/env/environment_config.dart';
 import 'package:gtb_app/modules_manager.dart';
+import 'package:gtb_app/ui/splash_screen.dart';
 import 'package:gtb_core/gtb_core.dart';
 import 'package:gtb_home/gtb_home.dart';
 import 'package:gtb_teatro/gtb_teatro.dart';
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   await runZonedGuarded(() async {
@@ -27,6 +30,9 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
   late final ApiClient _apiClient;
   late final Environment _environment;
 
+  // Modules
+  late final GtbHomeModule _gtbHomeModule;
+
   @override
   void initState() {
     super.initState();
@@ -41,6 +47,15 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
   Future<void> _initializeDependencies() async {
     _environment = EnvironmentConfig.instance.setupEnvironment;
     _setupApiClient(_environment);
+    _setupModules();
+  }
+
+  Future<void> _setupModules() async {
+    _gtbHomeModule = GtbHomeModule(
+      baseUrl: _environment.baseUrl,
+    );
+
+    await registerModulesDependencies();
   }
 
   void _setupApiClient(Environment env) {
@@ -59,6 +74,11 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
     _apiClient = GtbApiClient(dio: dio);
   }
 
+  Map<String, WidgetBuilder> get gtbRoutes => <String, WidgetBuilder>{
+    '/': (context) => const SplashScreen(),
+    ..._gtbHomeModule.navigation,
+  };
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -73,6 +93,9 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
               fontFamily: FontFamily.fontFamily,
               useMaterial3: false,
             ),
+            navigatorKey: navigatorKey,
+            initialRoute: SplashScreen.routeName,
+            routes: gtbRoutes,
           );
         },
       ),
@@ -81,11 +104,8 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
 
   @override
   List<RegisterModule> get modules {
-    final baseUrl = _environment.baseUrl;
     return [
-      GtbHomeModule(
-        baseUrl: baseUrl,
-      ),
+      _gtbHomeModule,
     ];
   }
 }

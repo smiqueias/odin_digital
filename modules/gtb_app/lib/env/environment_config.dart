@@ -34,8 +34,7 @@ final class EnvironmentConfig {
 
   Environment get setupEnvironment {
     const envString = String.fromEnvironment('ENV', defaultValue: 'prd');
-    final env = Environment.fromValue(envString);
-
+    env = Environment.fromValue(envString);
     return env;
   }
 }

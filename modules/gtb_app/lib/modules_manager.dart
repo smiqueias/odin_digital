@@ -4,7 +4,7 @@ import 'package:gtb_core/contracts/contracts.dart';
 mixin ModulesManager<T extends StatefulWidget> on State<T> {
   List<RegisterModule> get modules;
 
-  Future<void> initializeModules() async {
+  Future<void> registerModulesDependencies() async {
     await Future.forEach(
       modules,
       (modules) async {
@@ -12,8 +12,4 @@ mixin ModulesManager<T extends StatefulWidget> on State<T> {
       },
     );
   }
-
-  Map<String, WidgetBuilder> get gtbRoutes => {
-    for (final module in modules) ...module.routes,
-  };
 }
