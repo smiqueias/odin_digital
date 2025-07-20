@@ -1,7 +1,21 @@
 enum Environment {
-  dev,
-  uat,
-  prd;
+  dev(
+    baseUrl: 'https://6266f62263e0f382568936e4.dev.mockapi.io/',
+  ),
+  uat(
+    baseUrl: 'https://6266f62263e0f382568936e4.uat.mockapi.io/',
+  ),
+  prd(
+    baseUrl: 'https://6266f62263e0f382568936e4.mockapi.io/',
+  );
+
+  final String baseUrl;
+  final int httpTimeout;
+
+  const Environment({
+    required this.baseUrl,
+    this.httpTimeout = 60000,
+  });
 
   factory Environment.fromValue(String value) {
     return Environment.values.firstWhere(
@@ -12,35 +26,16 @@ enum Environment {
 }
 
 final class EnvironmentConfig {
-  final String baseUrl;
-  final Environment environment;
-  final int httpTimeout;
+  EnvironmentConfig._();
 
-  EnvironmentConfig._({
-    required this.baseUrl,
-    this.environment = Environment.prd,
-    this.httpTimeout = 60000,
-  });
+  static EnvironmentConfig get instance => EnvironmentConfig._();
 
-  factory EnvironmentConfig.dev() => EnvironmentConfig._(
-    baseUrl: 'https://6266f62263e0f382568936e4.dev.mockapi.io/',
-    environment: Environment.dev,
-  );
-  factory EnvironmentConfig.uat() => EnvironmentConfig._(
-    baseUrl: 'https://6266f62263e0f382568936e4.uat.mockapi.io/',
-    environment: Environment.dev,
-  );
-  factory EnvironmentConfig.prd() =>
-      EnvironmentConfig._(baseUrl: 'https://6266f62263e0f382568936e4.mockapi.io/');
+  Environment env = Environment.prd;
 
-  static EnvironmentConfig get config {
+  Environment get setupEnvironment {
     const envString = String.fromEnvironment('ENV', defaultValue: 'prd');
     final env = Environment.fromValue(envString);
 
-    return switch (env) {
-      Environment.dev => EnvironmentConfig.dev(),
-      Environment.uat => EnvironmentConfig.uat(),
-      Environment.prd => EnvironmentConfig.prd(),
-    };
+    return env;
   }
 }

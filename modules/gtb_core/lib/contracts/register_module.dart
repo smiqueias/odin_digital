@@ -1,7 +1,13 @@
+import 'package:flutter/widgets.dart';
+
 abstract base class RegisterModule {
   final String baseUrl;
+  final Map<String, WidgetBuilder> routes;
 
-  RegisterModule({required this.baseUrl});
+  RegisterModule({
+    required this.baseUrl,
+    required this.routes,
+  });
 
-  void register();
+  Future<void> register();
 }

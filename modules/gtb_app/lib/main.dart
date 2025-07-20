@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gtb_app/env/environment_config.dart';
+import 'package:gtb_app/modules_manager.dart';
 import 'package:gtb_core/gtb_core.dart';
+import 'package:gtb_home/gtb_home.dart';
 import 'package:gtb_teatro/gtb_teatro.dart';
 
 void main() async {
@@ -21,14 +23,14 @@ final class GtbApp extends StatefulWidget {
   State<GtbApp> createState() => _GtbAppState();
 }
 
-class _GtbAppState extends State<GtbApp> {
+class _GtbAppState extends State<GtbApp> with ModulesManager {
   late final ApiClient _apiClient;
-  late final EnvironmentConfig _environmentConfig;
+  late final Environment _environment;
 
   @override
   void initState() {
     super.initState();
-    initializeApp();
+    _initializeDependencies();
   }
 
   @override
@@ -36,19 +38,23 @@ class _GtbAppState extends State<GtbApp> {
     super.dispose();
   }
 
-  Future<void> initializeApp() async {
-    _environmentConfig = EnvironmentConfig.config;
-    _setupApiClient(_environmentConfig);
+  Future<void> _initializeDependencies() async {
+    _environment = EnvironmentConfig.instance.setupEnvironment;
+    _setupApiClient(_environment);
   }
 
-  Future<void> _initializeModules() async {}
-
-  void _setupApiClient(EnvironmentConfig environmentConfig) {
+  void _setupApiClient(Environment env) {
     final dio = Dio()
-      ..options.baseUrl = environmentConfig.baseUrl
-      ..options.connectTimeout = Duration(milliseconds: environmentConfig.httpTimeout)
-      ..options.sendTimeout = Duration(milliseconds: environmentConfig.httpTimeout)
-      ..options.receiveTimeout = Duration(milliseconds: environmentConfig.httpTimeout);
+      ..options.baseUrl = env.baseUrl
+      ..options.connectTimeout = Duration(
+        milliseconds: env.httpTimeout,
+      )
+      ..options.sendTimeout = Duration(
+        milliseconds: env.httpTimeout,
+      )
+      ..options.receiveTimeout = Duration(
+        milliseconds: env.httpTimeout,
+      );
 
     _apiClient = GtbApiClient(dio: dio);
   }
@@ -71,5 +77,15 @@ class _GtbAppState extends State<GtbApp> {
         },
       ),
     );
+  }
+
+  @override
+  List<RegisterModule> get modules {
+    final baseUrl = _environment.baseUrl;
+    return [
+      GtbHomeModule(
+        baseUrl: baseUrl,
+      ),
+    ];
   }
 }
