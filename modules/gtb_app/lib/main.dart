@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gtb_app/env/environment_config.dart';
 import 'package:gtb_core/gtb_core.dart';
+import 'package:gtb_teatro/gtb_teatro.dart';
 
 void main() async {
   await runZonedGuarded(() async {
@@ -54,6 +55,21 @@ class _GtbAppState extends State<GtbApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return AnnotatedRegion(
+      value: SystemUiOverlayStyle.light,
+      child: GtbThemeProvider(
+        typography: defaultTypography,
+        appColorScheme: gtbLight,
+        builder: (context) {
+          return MaterialApp(
+            title: 'GTB Digital',
+            theme: ThemeData(
+              fontFamily: FontFamily.fontFamily,
+              useMaterial3: false,
+            ),
+          );
+        },
+      ),
+    );
   }
 }
