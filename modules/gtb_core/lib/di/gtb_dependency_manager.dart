@@ -2,11 +2,13 @@ import 'package:get_it/get_it.dart';
 import 'package:gtb_core/contracts/dependency_manager.dart';
 
 final class GtbDependencyManager implements DependencyManager {
-  const GtbDependencyManager._();
+  GtbDependencyManager._();
 
-  factory GtbDependencyManager.asNewInstance() => GtbDependencyManager._();
+  static final GtbDependencyManager _instance = GtbDependencyManager._();
 
-  GetIt get getIt => GetIt.I;
+  static GtbDependencyManager get instance => _instance;
+
+  GetIt get getIt => GetIt.asNewInstance();
 
   @override
   void factory<T extends Object>(T Function() factoryBuilder) {
