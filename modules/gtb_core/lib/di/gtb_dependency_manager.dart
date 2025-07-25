@@ -8,23 +8,23 @@ final class GtbDependencyManager implements DependencyManager {
 
   static GtbDependencyManager get instance => _instance;
 
-  GetIt get getIt => GetIt.asNewInstance();
+  GetIt get _getIt => GetIt.asNewInstance();
 
   @override
   void factory<T extends Object>(T Function() factoryBuilder) {
-    getIt.registerFactory(factoryBuilder);
+    _getIt.registerFactory(factoryBuilder);
   }
 
   @override
   T singleton<T extends Object>(T instance) {
-    return getIt.registerSingleton(instance);
+    return _getIt.registerSingleton(instance);
   }
 
   @override
   Future<void> reset({bool dispose = true}) async {
-    await getIt.reset(dispose: dispose);
+    await _getIt.reset(dispose: dispose);
   }
 
   @override
-  T get<T extends Object>() => getIt.get<T>();
+  T get<T extends Object>() => _getIt.get<T>();
 }
