@@ -7,7 +7,10 @@ import 'package:gtb_app/modules_manager.dart';
 import 'package:gtb_app/ui/splash_screen.dart';
 import 'package:gtb_core/gtb_core.dart';
 import 'package:gtb_home/gtb_home.dart';
-import 'package:gtb_teatro/gtb_teatro.dart';
+import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart';
+import 'package:gtb_teatro/design_system/color_scheme/instances/gtb_light.dart';
+import 'package:gtb_teatro/design_system/fundations/fonts.dart';
+import 'package:gtb_teatro/design_system/fundations/typography.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -73,7 +76,7 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
   }
 
   Map<String, WidgetBuilder> get gtbRoutes => <String, WidgetBuilder>{
-    '/': (context) => const SplashScreen(),
+    '/splash': (context) => const SplashScreen(),
     ..._gtbHomeModule.navigation,
   };
 
@@ -87,7 +90,10 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
         builder: (context) {
           return MaterialApp(
             title: 'GTB Digital',
-            theme: ThemeData(fontFamily: FontFamily.fontFamily, useMaterial3: false),
+            theme: ThemeData(
+              fontFamily: FontFamily.fontFamily,
+              useMaterial3: false,
+            ),
             navigatorKey: navigatorKey,
             initialRoute: SplashScreen.routeName,
             routes: gtbRoutes,

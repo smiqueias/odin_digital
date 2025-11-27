@@ -19,6 +19,7 @@ final class GtbColorScheme {
   final Color danger;
   final Color white;
   final Color black;
+  final Color blue;
 
   const GtbColorScheme({
     required this.purpleLight,
@@ -37,5 +38,6 @@ final class GtbColorScheme {
     required this.black,
     required this.danger,
     required this.greenSplash,
+    required this.blue,
   });
 }
