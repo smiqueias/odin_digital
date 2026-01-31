@@ -4,14 +4,17 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: ^3.8.1
-  flutter: ">=3.32.7"
+  sdk: ^3.10.0
+  flutter: ^3.38.6
 
 dependencies:
   flutter:
     sdk: flutter
 
   gap: ^3.0.1
+  intersperse: ^2.0.0
+  shimmer: ^3.0.0
+  prototype_constrained_box: 2.0.3
 
 dev_dependencies:
   flutter_test:

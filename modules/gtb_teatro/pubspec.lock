@@ -74,6 +74,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  intersperse:
+    dependency: "direct main"
+    description:
+      name: intersperse
+      sha256: "2f8a905c96f6cbba978644a3d5b31b8d86ddc44917662df7d27a61f3df66a576"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -130,6 +138,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  prototype_constrained_box:
+    dependency: "direct main"
+    description:
+      name: prototype_constrained_box
+      sha256: "756c39cf4c70faa549daaf6153bf1e0d73b3b847a670e431b9a50df46b719264"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -200,5 +224,5 @@ packages:
     source: hosted
     version: "15.0.0"
 sdks:
-  dart: ">=3.8.1 <4.0.0"
-  flutter: ">=3.32.7"
+  dart: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.6 <4.0.0"

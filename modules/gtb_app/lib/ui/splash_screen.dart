@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_information_card.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_input.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_primary_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_text_field.dart';
 import 'package:gtb_teatro/design_system/fundations/gaps.dart';
 
 final class SplashScreen extends StatefulWidget {
