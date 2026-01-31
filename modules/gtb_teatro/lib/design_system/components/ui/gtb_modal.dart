@@ -1,12 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
-import 'package:gtb_teatro/design_system/foundation/bottom_safe_area_spacer.dart';
-import 'package:gtb_teatro/design_system/foundation/constants.dart';
-import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 import 'package:gtb_teatro/design_system/models/action_settings.dart';
 import 'package:gtb_teatro/design_system/models/semantics_data.dart';

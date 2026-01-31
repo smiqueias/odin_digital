@@ -1,11 +1,5 @@
 export 'color_scheme/color_scheme.dart';
 export 'color_scheme/color_scheme_provider.dart';
 export 'color_scheme/instances/gtb_light.dart';
-export 'components/ui/gtb_input.dart';
-export 'foundation/border_radius.dart';
-export 'foundation/elevations.dart';
-export 'foundation/fonts.dart';
-export 'foundation/icon_sizes.dart';
-export 'foundation/paddings.dart';
-export 'foundation/spacing.dart';
-export 'foundation/typography.dart';
+export 'components/components.dart';
+export 'foundation/foundations.dart';

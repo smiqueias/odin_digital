@@ -3,11 +3,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:gtb_teatro/design_system/components/global/global_lock_screen.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_coachmark.dart';
-import 'package:gtb_teatro/design_system/foundation/constants.dart';
-import 'package:gtb_teatro/design_system/foundation/lerp.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 import 'package:gtb_teatro/design_system/models/action_settings.dart';
 

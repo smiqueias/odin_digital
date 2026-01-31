@@ -1,6 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/foundation/lerp.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 enum GtbGlobalStatusBadgeKind {

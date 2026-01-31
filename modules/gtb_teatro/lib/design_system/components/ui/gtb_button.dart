@@ -1,14 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_checkbox.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_notification.dart';
-import 'package:gtb_teatro/design_system/foundation/bottom_safe_area_spacer.dart';
-import 'package:gtb_teatro/design_system/foundation/constants.dart';
-import 'package:gtb_teatro/design_system/foundation/icons.dart';
-import 'package:gtb_teatro/design_system/foundation/platform_extension.dart';
-import 'package:gtb_teatro/design_system/foundation/widget_state_property.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 import 'package:gtb_teatro/design_system/models/action_settings.dart';
 import 'package:gtb_teatro/design_system/models/semantics_data.dart';

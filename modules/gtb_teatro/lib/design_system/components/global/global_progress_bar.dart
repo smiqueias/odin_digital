@@ -58,7 +58,6 @@ class _GtbGlobalProgressBarState extends State<GtbGlobalProgressBar>
       GtbGlobalProgressBarSize.large => 8.0,
     };
 
-    final resolvedInitialStatus = initialStatus;
     final resolvedStatus = widget.status;
 
     return ClipRRect(

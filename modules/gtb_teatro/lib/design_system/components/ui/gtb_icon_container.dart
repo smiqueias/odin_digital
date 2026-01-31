@@ -1,12 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/components/feedback/ink_well.dart';
-import 'package:gtb_teatro/design_system/components/global/global_notification_badge.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_shimmer.dart';
-import 'package:gtb_teatro/design_system/foundation/icons.dart';
-import 'package:gtb_teatro/design_system/foundation/lerp.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 enum GtbIconContainerSize {

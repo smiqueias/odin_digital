@@ -45,7 +45,6 @@ final class _CustomInkResponse extends InkResponse {
   final double verticalSplash;
 
   _CustomInkResponse({
-    super.key,
     super.child,
     super.onTapUp,
     super.onTapDown,

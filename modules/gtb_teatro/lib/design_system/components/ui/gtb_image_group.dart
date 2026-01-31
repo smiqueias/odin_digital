@@ -1,8 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_avatar.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_image_container.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 enum GtbImageGroupSize {

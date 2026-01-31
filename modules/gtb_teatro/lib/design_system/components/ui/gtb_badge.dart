@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:gtb_teatro/design_system/components/feedback/ink_well.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_image_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_shimmer.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_tooltip.dart';
-import 'package:gtb_teatro/design_system/foundation/constants.dart';
-import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 enum GtbBadgeStatusKind {
