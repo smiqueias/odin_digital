@@ -16,6 +16,7 @@ import 'package:gtb_teatro/design_system/components/ui/gtb_input.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_nav_bar.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_radio_button.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_switcher.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_tooltip.dart';
 import 'package:gtb_teatro/design_system/foundation/typography.dart';
 
@@ -42,6 +43,7 @@ final class GtbThemeProvider extends InheritedWidget {
   late final GtbGlobalImageComboThemeData globalImageComboTheme;
   late final GtbImageGroupThemeData imageGroupTheme;
   late final GtbTooltipThemeData tooltipTheme;
+  late final GtbSwitcherThemeData switcherTheme;
 
   GtbThemeProvider({
     super.key,
@@ -148,6 +150,12 @@ final class GtbThemeProvider extends InheritedWidget {
        ),
 
        tooltipTheme = createDefaultTooltipTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       switcherTheme = createDefaultSwitcherTheme(
          colorScheme: appColorScheme,
          borderTheme: defaultBorderTheme,
          typography: typography,

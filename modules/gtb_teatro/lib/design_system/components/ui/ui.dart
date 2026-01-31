@@ -18,4 +18,5 @@ export 'gtb_notification.dart';
 export 'gtb_radio_button.dart';
 export 'gtb_search.dart';
 export 'gtb_shimmer.dart';
+export 'gtb_switcher.dart';
 export 'gtb_tooltip.dart';

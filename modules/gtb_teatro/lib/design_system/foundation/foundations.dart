@@ -12,6 +12,7 @@ export 'paddings.dart';
 export 'platform_extension.dart';
 export 'positioning.dart';
 export 'spacing.dart';
+export 'text_style_ext.dart';
 export 'toggleable.dart';
 export 'typography.dart';
 export 'widget_state_property.dart';
