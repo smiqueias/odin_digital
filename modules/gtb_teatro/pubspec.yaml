@@ -24,3 +24,23 @@ dev_dependencies:
       url: https://github.com/smiqueias/gtb_digital
       ref: dev
       path: modules/gtb_analysis_options
+
+flutter:
+  fonts:
+    - family: BtgPactualSans
+      fonts:
+        - asset: lib/assets/fonts/btg_pactual_sans_regular.ttf
+          style: normal
+          weight: 400
+        - asset: lib/assets/fonts/btg_pactual_sans_italic.ttf
+          style: italic
+          weight: 400
+        - asset: lib/assets/fonts/btg_pactual_sans_bold_italic.ttf
+          style: italic
+          weight: 700
+        - asset: lib/assets/fonts/btg_pactual_sans_bold.ttf
+          style: normal
+          weight: 700
+    - family: OrquestraIcons
+      fonts:
+        - asset: lib/assets/fonts/orquestra_icons.ttf

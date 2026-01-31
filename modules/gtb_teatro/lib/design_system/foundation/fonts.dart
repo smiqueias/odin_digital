@@ -1,3 +1,4 @@
 abstract final class FontFamily {
-  static const String fontFamily = 'inter';
+  static const String fontFamily = 'BtgPactualSans';
+  static const String icons = 'OrquestraIcons';
 }
