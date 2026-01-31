@@ -3,15 +3,19 @@ import 'package:gtb_teatro/design_system/color_scheme/color_scheme.dart';
 import 'package:gtb_teatro/design_system/components/global/global_divider.dart';
 import 'package:gtb_teatro/design_system/components/global/global_progress_bar.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_button.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_checkbox.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_input.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_radio_button.dart';
 import 'package:gtb_teatro/design_system/foundation/typography.dart';
 
 final class GtbThemeProvider extends InheritedWidget {
   final GtbColorScheme appColorScheme;
   final GtbTypography typography;
+  final bool isInverse;
 
   late final GtbIconContainerThemeData iconContainerTheme;
   late final GtbLinkThemeData linkTheme;
@@ -20,12 +24,17 @@ final class GtbThemeProvider extends InheritedWidget {
   late final GtbGlobalProgressBarThemeData globalProgressBarTheme;
   late final GtbInputControlButtonThemeData inputControlButtonTheme;
   late final GtbInputThemeData inputTheme;
+  late final GtbButtonThemeData buttonTheme;
+  late final GtbBorderThemeData borderTheme;
+  late final GtbRadioButtonThemeData radioButtonTheme;
+  late final GtbCheckboxThemeData checkboxTheme;
 
   GtbThemeProvider({
     super.key,
     required this.appColorScheme,
     required this.typography,
     required WidgetBuilder builder,
+    this.isInverse = false,
   }) : iconContainerTheme = createDefaultIconContainerTheme(
          borderTheme: defaultBorderTheme,
          colorScheme: appColorScheme,
@@ -63,6 +72,26 @@ final class GtbThemeProvider extends InheritedWidget {
        ),
 
        inputTheme = createDefaultInputTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       buttonTheme = createDefaultButtonTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       borderTheme = defaultBorderTheme,
+
+       radioButtonTheme = createDefaultRadioButtonTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       checkboxTheme = createDefaultCheckboxTheme(
          colorScheme: appColorScheme,
          borderTheme: defaultBorderTheme,
          typography: typography,

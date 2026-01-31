@@ -9,8 +9,8 @@ import 'package:gtb_core/gtb_core.dart';
 import 'package:gtb_home/gtb_home.dart';
 import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart';
 import 'package:gtb_teatro/design_system/color_scheme/instances/gtb_light.dart';
-import 'package:gtb_teatro/design_system/fundations/fonts.dart';
-import 'package:gtb_teatro/design_system/fundations/typography.dart';
+import 'package:gtb_teatro/design_system/foundation/fonts.dart';
+import 'package:gtb_teatro/design_system/foundation/typography.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -86,7 +86,7 @@ class _GtbAppState extends State<GtbApp> with ModulesManager {
       value: SystemUiOverlayStyle.light,
       child: GtbThemeProvider(
         typography: defaultTypography,
-        appColorScheme: gtbLight,
+        appColorScheme: gtbLightColorScheme,
         builder: (context) {
           return MaterialApp(
             title: 'GTB Digital',

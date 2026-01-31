@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/color_scheme/color_scheme.dart';
 import 'package:gtb_teatro/design_system/components/global/global_loader.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_shimmer.dart';
 import 'package:gtb_teatro/design_system/foundation/constants.dart';
-import 'package:gtb_teatro/design_system/foundation/spacing.dart';
+import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 import 'package:gtb_teatro/design_system/models/action_settings.dart';
 

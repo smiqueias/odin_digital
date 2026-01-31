@@ -8,6 +8,7 @@ import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart
 import 'package:gtb_teatro/design_system/components/global/global_loader.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
+import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/foundation/lerp.dart';
 import 'package:gtb_teatro/design_system/foundation/spacing.dart';
 import 'package:gtb_teatro/design_system/foundation/typography.dart';

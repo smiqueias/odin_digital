@@ -1,9 +1,7 @@
 export 'color_scheme/color_scheme.dart';
 export 'color_scheme/color_scheme_provider.dart';
 export 'color_scheme/instances/gtb_light.dart';
-export 'components/ui/gtb_information_card.dart';
 export 'components/ui/gtb_input.dart';
-export 'components/ui/gtb_primary_button.dart';
 export 'foundation/border_radius.dart';
 export 'foundation/elevations.dart';
 export 'foundation/fonts.dart';
