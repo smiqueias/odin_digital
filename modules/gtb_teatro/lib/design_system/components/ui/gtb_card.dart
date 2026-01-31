@@ -2,15 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gtb_teatro/design_system/components/feedback/ink_well.dart';
 import 'package:gtb_teatro/design_system/components/global/global_divider.dart';
+import 'package:gtb_teatro/design_system/components/global/global_image_combo.dart';
 import 'package:gtb_teatro/design_system/components/global/global_progress_bar.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_avatar.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_badge.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_button.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_checkbox.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_image_container.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_image_group.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_informative_icon.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_notification.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_radio_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_shimmer.dart';
 import 'package:gtb_teatro/design_system/foundation/animated_align_opacity.dart';
 import 'package:gtb_teatro/design_system/foundation/constants.dart';
+import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 import 'package:gtb_teatro/design_system/models/action_settings.dart';
 import 'package:intersperse/intersperse.dart';
@@ -375,9 +385,9 @@ final class _GtbCardBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = GtbThemeProvider.of(context).appColorScheme;
+    final theme = GtbThemeProvider.of(context);
 
-    final resolvedBorderColor = borderColor ?? theme.outlineBase;
+    final resolvedBorderColor = borderColor ?? theme.appColorScheme.outlineBase;
     final resolvedBorderStrokeWidth = borderStrokeWidth ?? theme.borderTheme.strokeThin;
     final resolvedBorderStyle = borderDashedStyle ?? const GtbBorderStyle.solid();
 
@@ -390,7 +400,7 @@ final class _GtbCardBase extends StatelessWidget {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: backgroundColor ?? theme.actionNeutralEnabled,
+        color: backgroundColor ?? theme.appColorScheme.actionNeutralEnabled,
         borderRadius: BorderRadius.circular(GtbGapValue.xxxs),
         border: GtbBorder.all(
           color: resolvedBorderColor,
@@ -849,10 +859,10 @@ final class GtbSubCardDetailDescription extends GtbSubCardDetail {
 
   @override
   Widget build(BuildContext context) {
-    final theme = GtbTheme.of(context);
+    final theme = GtbThemeProvider.of(context);
 
     return DefaultTextStyle(
-      style: theme.typography.bodySmall.copyWith(color: theme.onColorEmphasisHigh),
+      style: theme.typography.bodySmall.copyWith(color: theme.appColorScheme.onColorEmphasisHigh),
       child: text,
     );
   }
@@ -883,7 +893,7 @@ final class GtbSubCardDetailTwoColumns extends GtbSubCardDetail {
   @override
   Widget build(BuildContext context) {
     final theme = GtbThemeProvider.of(context);
-    final colorScheme = theme;
+    final colorScheme = theme.appColorScheme;
     final typography = theme.typography;
     final overlineStyle = typography.captionBase.copyWith(color: colorScheme.onColorEmphasisLow);
     final titleStyle = typography.titleSmall.copyWith(color: colorScheme.onColorEmphasisHigh);
@@ -1004,8 +1014,8 @@ final class GtbSubCardDetailListRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = GtbTheme.of(context);
-    final colorScheme = theme.colorScheme;
+    final theme = GtbThemeProvider.of(context);
+    final colorScheme = theme.appColorScheme;
     final typography = theme.typography;
 
     return Padding(

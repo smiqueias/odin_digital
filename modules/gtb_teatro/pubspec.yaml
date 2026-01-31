@@ -15,6 +15,8 @@ dependencies:
   intersperse: ^2.0.0
   shimmer: ^3.0.0
   prototype_constrained_box: 2.0.3
+  clock: 1.1.2
+  modal_bottom_sheet: 3.0.0
 
 dev_dependencies:
   flutter_test:

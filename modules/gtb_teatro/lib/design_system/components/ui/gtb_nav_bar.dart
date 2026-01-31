@@ -1,13 +1,19 @@
 import 'dart:math';
 
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:gtb_teatro/design_system/color_scheme/color_scheme.dart';
+import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_avatar.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_search.dart';
+import 'package:gtb_teatro/design_system/foundation/color_util.dart';
 import 'package:gtb_teatro/design_system/foundation/constants.dart';
 import 'package:gtb_teatro/design_system/foundation/icons.dart';
 import 'package:gtb_teatro/design_system/foundation/spacing.dart';
-import 'package:gtb_teatro/design_system/gtb_teatro.dart';
+import 'package:gtb_teatro/design_system/foundation/typography.dart';
 import 'package:intersperse/intersperse.dart';
 
 final class GtbNavBar extends StatelessWidget implements PreferredSizeWidget {
@@ -431,4 +437,108 @@ class GtbNavBarSearch extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
+}
+
+final class GtbNavBarTheme extends InheritedTheme {
+  const GtbNavBarTheme({
+    required super.child,
+    required this.data,
+    super.key,
+  });
+
+  final GtbNavBarThemeData data;
+
+  static GtbNavBarThemeData of(BuildContext context) {
+    final theme = context.dependOnInheritedWidgetOfExactType<GtbNavBarTheme>();
+    return theme?.data ?? GtbThemeProvider.of(context).navBarTheme;
+  }
+
+  @override
+  bool updateShouldNotify(GtbNavBarTheme oldWidget) {
+    return oldWidget.data != data;
+  }
+
+  @override
+  Widget wrap(BuildContext context, Widget child) {
+    return GtbNavBarTheme(
+      data: data,
+      child: child,
+    );
+  }
+}
+
+final class GtbNavBarThemeData {
+  GtbNavBarThemeData({
+    required this.statusBarColor,
+    required this.statusBarIconBrightness,
+    required this.statusBarBrightness,
+    required this.titleTextStyle,
+    required this.homeTitleTextStyle,
+    required this.backgroundColor,
+    required this.foregroundColor,
+    required this.searchBackgroundColor,
+  });
+
+  final Color statusBarColor;
+  final Brightness statusBarIconBrightness;
+  final Brightness statusBarBrightness;
+  final TextStyle titleTextStyle;
+  final TextStyle homeTitleTextStyle;
+  final Color backgroundColor;
+  final Color foregroundColor;
+  final Color searchBackgroundColor;
+
+  static GtbNavBarThemeData lerp(GtbNavBarThemeData a, GtbNavBarThemeData b, double t) {
+    return GtbNavBarThemeData(
+      statusBarColor: Color.lerp(a.statusBarColor, b.statusBarColor, t)!,
+      statusBarIconBrightness: t < 0.5 ? a.statusBarIconBrightness : b.statusBarIconBrightness,
+      statusBarBrightness: t < 0.5 ? a.statusBarBrightness : b.statusBarBrightness,
+      titleTextStyle: TextStyle.lerp(a.titleTextStyle, b.titleTextStyle, t)!,
+      homeTitleTextStyle: TextStyle.lerp(a.homeTitleTextStyle, b.homeTitleTextStyle, t)!,
+      backgroundColor: Color.lerp(a.backgroundColor, b.backgroundColor, t)!,
+      foregroundColor: Color.lerp(a.foregroundColor, b.foregroundColor, t)!,
+      searchBackgroundColor: Color.lerp(a.searchBackgroundColor, b.searchBackgroundColor, t)!,
+    );
+  }
+
+  GtbNavBarThemeData copyWith({
+    Color? statusBarColor,
+    Brightness? statusBarIconBrightness,
+    Brightness? statusBarBrightness,
+    TextStyle? titleTextStyle,
+    TextStyle? homeTitleTextStyle,
+    Color? backgroundColor,
+    Color? foregroundColor,
+    Color? searchBackgroundColor,
+  }) {
+    return GtbNavBarThemeData(
+      statusBarColor: statusBarColor ?? this.statusBarColor,
+      statusBarIconBrightness: statusBarIconBrightness ?? this.statusBarIconBrightness,
+      statusBarBrightness: statusBarBrightness ?? this.statusBarBrightness,
+      titleTextStyle: titleTextStyle ?? this.titleTextStyle,
+      homeTitleTextStyle: homeTitleTextStyle ?? this.homeTitleTextStyle,
+      backgroundColor: backgroundColor ?? this.backgroundColor,
+      foregroundColor: foregroundColor ?? this.foregroundColor,
+      searchBackgroundColor: searchBackgroundColor ?? this.searchBackgroundColor,
+    );
+  }
+}
+
+GtbNavBarThemeData createDefaultNavBarTheme({
+  required GtbColorScheme colorScheme,
+  required GtbBorderThemeData borderTheme,
+  required GtbTypography typography,
+}) {
+  final isLightEmphasisColor = isLightColor(colorScheme.onColorEmphasisHigh);
+
+  return GtbNavBarThemeData(
+    statusBarColor: kTransparentColor,
+    statusBarIconBrightness: isLightEmphasisColor ? Brightness.light : Brightness.dark,
+    statusBarBrightness: isLightEmphasisColor ? Brightness.dark : Brightness.light,
+    titleTextStyle: typography.titleSmall,
+    homeTitleTextStyle: typography.bodySmall,
+    backgroundColor: kTransparentColor,
+    foregroundColor: colorScheme.onColorEmphasisHigh,
+    searchBackgroundColor: colorScheme.actionNeutralFocus,
+  );
 }

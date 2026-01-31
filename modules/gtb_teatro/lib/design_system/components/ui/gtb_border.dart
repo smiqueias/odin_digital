@@ -443,7 +443,6 @@ class GtbBorder extends BoxBorder {
         // of this, the drawing is not perfect. Ideally, we should instead remove all the uniformity logic, but provide
         // a way for the painter to properly draw a non-uniform border with radius.
         if (borderRadius != null && (!_widthIsUniform || !_styleIsUniform)) {
-          // TODO(mateusfccp): Provide better implementation for non-uniform radius drawing
           throw FlutterError.fromParts(<DiagnosticsNode>[
             ErrorSummary('A borderRadius can only be given for a uniform Border.'),
             ErrorDescription('The following is not uniform:'),

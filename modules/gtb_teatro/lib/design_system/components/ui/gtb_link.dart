@@ -137,6 +137,34 @@ class GtbLink extends StatelessWidget {
   }
 }
 
+final class GtbLinkTheme extends InheritedTheme {
+  const GtbLinkTheme({
+    required super.child,
+    required this.data,
+    super.key,
+  });
+
+  final GtbLinkThemeData data;
+
+  static GtbLinkThemeData of(BuildContext context) {
+    final theme = context.dependOnInheritedWidgetOfExactType<GtbLinkTheme>();
+    return theme?.data ?? GtbThemeProvider.of(context).linkTheme;
+  }
+
+  @override
+  bool updateShouldNotify(GtbLinkTheme oldWidget) {
+    return oldWidget.data != data;
+  }
+
+  @override
+  Widget wrap(BuildContext context, Widget child) {
+    return GtbLinkTheme(
+      data: data,
+      child: child,
+    );
+  }
+}
+
 final class GtbLinkThemeData {
   const GtbLinkThemeData({
     required this.neutralLinkStyle,

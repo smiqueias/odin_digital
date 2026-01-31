@@ -1,15 +1,22 @@
 import 'package:flutter/widgets.dart';
 import 'package:gtb_teatro/design_system/color_scheme/color_scheme.dart';
 import 'package:gtb_teatro/design_system/components/global/global_divider.dart';
+import 'package:gtb_teatro/design_system/components/global/global_image_combo.dart';
 import 'package:gtb_teatro/design_system/components/global/global_progress_bar.dart';
+import 'package:gtb_teatro/design_system/components/global/global_status_badge.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_avatar.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_checkbox.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_image_container.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_image_group.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_input.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_nav_bar.dart';
 import 'package:gtb_teatro/design_system/components/ui/gtb_radio_button.dart';
+import 'package:gtb_teatro/design_system/components/ui/gtb_tooltip.dart';
 import 'package:gtb_teatro/design_system/foundation/typography.dart';
 
 final class GtbThemeProvider extends InheritedWidget {
@@ -28,6 +35,13 @@ final class GtbThemeProvider extends InheritedWidget {
   late final GtbBorderThemeData borderTheme;
   late final GtbRadioButtonThemeData radioButtonTheme;
   late final GtbCheckboxThemeData checkboxTheme;
+  late final GtbAvatarThemeData avatarTheme;
+  late final GtbStatusBadgeThemeData statusBadgeTheme;
+  late final GtbNavBarThemeData navBarTheme;
+  late final GtbImageContainerThemeData imageContainerTheme;
+  late final GtbGlobalImageComboThemeData globalImageComboTheme;
+  late final GtbImageGroupThemeData imageGroupTheme;
+  late final GtbTooltipThemeData tooltipTheme;
 
   GtbThemeProvider({
     super.key,
@@ -92,6 +106,48 @@ final class GtbThemeProvider extends InheritedWidget {
        ),
 
        checkboxTheme = createDefaultCheckboxTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       avatarTheme = createDefaultAvatarTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       statusBadgeTheme = createDefaultStatusBadgeTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       navBarTheme = createDefaultNavBarTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       imageContainerTheme = createDefaultImageContainerTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       globalImageComboTheme = createDefaultGlobalImageComboTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       imageGroupTheme = createDefaultImageGroupTheme(
+         colorScheme: appColorScheme,
+         borderTheme: defaultBorderTheme,
+         typography: typography,
+       ),
+
+       tooltipTheme = createDefaultTooltipTheme(
          colorScheme: appColorScheme,
          borderTheme: defaultBorderTheme,
          typography: typography,
