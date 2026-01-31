@@ -1,24 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/color_scheme/color_scheme.dart';
-import 'package:gtb_teatro/design_system/components/global/global_divider.dart';
-import 'package:gtb_teatro/design_system/components/global/global_image_combo.dart';
-import 'package:gtb_teatro/design_system/components/global/global_progress_bar.dart';
-import 'package:gtb_teatro/design_system/components/global/global_status_badge.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_avatar.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_border.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_checkbox.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_icon_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_image_container.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_image_group.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_input.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_link.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_nav_bar.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_radio_button.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_switcher.dart';
-import 'package:gtb_teatro/design_system/components/ui/gtb_tooltip.dart';
-import 'package:gtb_teatro/design_system/foundation/typography.dart';
+import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 final class GtbThemeProvider extends InheritedWidget {
   final GtbColorScheme appColorScheme;
@@ -44,6 +25,7 @@ final class GtbThemeProvider extends InheritedWidget {
   late final GtbImageGroupThemeData imageGroupTheme;
   late final GtbTooltipThemeData tooltipTheme;
   late final GtbSwitcherThemeData switcherTheme;
+  late final GtbTagThemeData tagTheme;
 
   GtbThemeProvider({
     super.key,

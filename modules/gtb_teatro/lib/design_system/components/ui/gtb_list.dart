@@ -1,8 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:gtb_teatro/design_system/color_scheme/color_scheme_provider.dart';
-import 'package:gtb_teatro/design_system/components/components.dart';
-import 'package:gtb_teatro/design_system/foundation/foundations.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
+import 'package:gtb_teatro/design_system/gtb_teatro.dart';
 
 typedef GtbSubListBadges = GtbBadgesGroup;
 
