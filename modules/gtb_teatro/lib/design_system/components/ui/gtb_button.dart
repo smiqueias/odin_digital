@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
-import 'package:gtb_teatro/design_system/models/semantics_data.dart';
 
 enum GtbButtonKind {
   primary,
@@ -869,24 +867,12 @@ final class GtbButtonStyle {
   static GtbButtonStyle lerp(GtbButtonStyle a, GtbButtonStyle b, double t) {
     return GtbButtonStyle(
       radius: BorderRadius.lerp(a.radius, b.radius, t)!,
-      textStyle:
-          WidgetStateProperty.lerp(a.textStyle, b.textStyle, t, TextStyle.lerp)!
-              as WidgetStateProperty<TextStyle>,
-      borderSide:
-          WidgetStateProperty.lerp(a.borderSide, b.borderSide, t, GtbBorderSide.lerpNullable)!
-              as WidgetStateProperty<GtbBorderSide>,
-      backgroundColor:
-          WidgetStateProperty.lerp(a.backgroundColor, b.backgroundColor, t, Color.lerp)!
-              as WidgetStateProperty<Color>,
-      foregroundColor:
-          WidgetStateProperty.lerp(a.foregroundColor, b.foregroundColor, t, Color.lerp)!
-              as WidgetStateProperty<Color>,
-      overlayColor:
-          WidgetStateProperty.lerp(a.overlayColor, b.overlayColor, t, Color.lerp)!
-              as WidgetStateProperty<Color>,
-      iconColor:
-          WidgetStateProperty.lerp(a.iconColor, b.iconColor, t, Color.lerp)
-              as WidgetStateProperty<Color>?,
+      textStyle: WidgetStateProperty.lerp(a.textStyle, b.textStyle, t, TextStyle.lerp)! as WidgetStateProperty<TextStyle>,
+      borderSide: WidgetStateProperty.lerp(a.borderSide, b.borderSide, t, GtbBorderSide.lerpNullable)! as WidgetStateProperty<GtbBorderSide>,
+      backgroundColor: WidgetStateProperty.lerp(a.backgroundColor, b.backgroundColor, t, Color.lerp)! as WidgetStateProperty<Color>,
+      foregroundColor: WidgetStateProperty.lerp(a.foregroundColor, b.foregroundColor, t, Color.lerp)! as WidgetStateProperty<Color>,
+      overlayColor: WidgetStateProperty.lerp(a.overlayColor, b.overlayColor, t, Color.lerp)! as WidgetStateProperty<Color>,
+      iconColor: WidgetStateProperty.lerp(a.iconColor, b.iconColor, t, Color.lerp) as WidgetStateProperty<Color>?,
       elevation: t < 0.5 ? a.elevation : b.elevation,
       minimumSize: Size.lerp(a.minimumSize, b.minimumSize, t)!,
     );

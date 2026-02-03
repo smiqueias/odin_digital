@@ -47,8 +47,7 @@ class GtbAvatar extends GtbAvatarWidget {
 
     final radius = size.value / 2;
 
-    final resolvedNotificationBadge =
-        notificationBadge != null && size.value <= GtbAvatarSize.size32.value
+    final resolvedNotificationBadge = notificationBadge != null && size.value <= GtbAvatarSize.size32.value
         ? const GtbGlobalNotificationBadge.bullet() //
         : notificationBadge;
 

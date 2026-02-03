@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
 
 sealed class GtbNotificationKind {
   const GtbNotificationKind();
@@ -493,9 +492,7 @@ class _Notification extends StatelessWidget {
             Material(
               color: kTransparentColor,
               child: Padding(
-                padding:
-                    const EdgeInsets.all(GtbPaddingValue.sm) -
-                    const EdgeInsets.all(kIconButtonExtraSpacing),
+                padding: const EdgeInsets.all(GtbPaddingValue.sm) - const EdgeInsets.all(kIconButtonExtraSpacing),
                 child: GtbIconButton(
                   icon: const Icon(GtbIcons.close),
                   onPress: onPressClose,

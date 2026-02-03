@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
 
 enum GtbTooltipPosition {
   left,
@@ -165,8 +164,7 @@ final class _GtbTooltipState extends State<GtbTooltip> with SingleTickerProvider
       _displayTimer = Timer(
         displayDuration,
         () {
-          if (_controller.status == AnimationStatus.dismissed ||
-              _controller.status == AnimationStatus.completed) {
+          if (_controller.status == AnimationStatus.dismissed || _controller.status == AnimationStatus.completed) {
             hideTooltip();
           }
         },
@@ -439,8 +437,7 @@ final class _TooltipPositionDelegate extends SingleChildLayoutDelegate {
         GtbTooltipPosition.bottom,
         GtbTooltipAlignment.start,
       ) => BoxConstraints(maxWidth: constraints.maxWidth - targetOffset.dx - sideMargin),
-      (GtbTooltipPosition.top, GtbTooltipAlignment.center) ||
-      (GtbTooltipPosition.bottom, GtbTooltipAlignment.center) => BoxConstraints(
+      (GtbTooltipPosition.top, GtbTooltipAlignment.center) || (GtbTooltipPosition.bottom, GtbTooltipAlignment.center) => BoxConstraints(
         maxWidth: (min(targetOffset.dx, constraints.maxWidth - targetOffset.dx) - sideMargin) * 2,
       ),
       (GtbTooltipPosition.top, GtbTooltipAlignment.end) ||
@@ -454,29 +451,24 @@ final class _TooltipPositionDelegate extends SingleChildLayoutDelegate {
   @override
   Offset getPositionForChild(Size size, Size childSize) {
     final x = switch ((position, alignment)) {
-      (GtbTooltipPosition.left, _) =>
-        targetOffset.dx - childSize.width - targetMargin - bevelSize.height,
+      (GtbTooltipPosition.left, _) => targetOffset.dx - childSize.width - targetMargin - bevelSize.height,
       (GtbTooltipPosition.right, _) => targetOffset.dx + bevelSize.height,
       (GtbTooltipPosition.top, GtbTooltipAlignment.start) => targetOffset.dx,
       (GtbTooltipPosition.top, GtbTooltipAlignment.center) => targetOffset.dx - childSize.width / 2,
       (GtbTooltipPosition.top, GtbTooltipAlignment.end) => targetOffset.dx - childSize.width,
       (GtbTooltipPosition.bottom, GtbTooltipAlignment.start) => targetOffset.dx,
-      (GtbTooltipPosition.bottom, GtbTooltipAlignment.center) =>
-        targetOffset.dx - childSize.width / 2,
+      (GtbTooltipPosition.bottom, GtbTooltipAlignment.center) => targetOffset.dx - childSize.width / 2,
       (GtbTooltipPosition.bottom, GtbTooltipAlignment.end) => targetOffset.dx - childSize.width,
     };
 
     final y = switch ((position, alignment)) {
       (GtbTooltipPosition.left, GtbTooltipAlignment.start) => targetOffset.dy,
-      (GtbTooltipPosition.left, GtbTooltipAlignment.center) =>
-        targetOffset.dy - childSize.height / 2,
+      (GtbTooltipPosition.left, GtbTooltipAlignment.center) => targetOffset.dy - childSize.height / 2,
       (GtbTooltipPosition.left, GtbTooltipAlignment.end) => targetOffset.dy - childSize.height,
       (GtbTooltipPosition.right, GtbTooltipAlignment.start) => targetOffset.dy,
-      (GtbTooltipPosition.right, GtbTooltipAlignment.center) =>
-        targetOffset.dy - childSize.height / 2,
+      (GtbTooltipPosition.right, GtbTooltipAlignment.center) => targetOffset.dy - childSize.height / 2,
       (GtbTooltipPosition.right, GtbTooltipAlignment.end) => targetOffset.dy - childSize.height,
-      (GtbTooltipPosition.top, _) =>
-        targetOffset.dy - childSize.height - targetMargin - bevelSize.height,
+      (GtbTooltipPosition.top, _) => targetOffset.dy - childSize.height - targetMargin - bevelSize.height,
       (GtbTooltipPosition.bottom, _) => targetOffset.dy + targetMargin + bevelSize.height,
     };
 

@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
-import 'package:gtb_teatro/design_system/models/semantics_data.dart';
 
 final class GtbModal extends StatelessWidget {
   const GtbModal({
@@ -117,9 +115,7 @@ final class GtbModal extends StatelessWidget {
               ],
             ),
             Padding(
-              padding:
-                  const EdgeInsets.all(GtbPaddingValue.sm) -
-                  const EdgeInsets.all(kIconButtonExtraSpacing),
+              padding: const EdgeInsets.all(GtbPaddingValue.sm) - const EdgeInsets.all(kIconButtonExtraSpacing),
               child: GtbIconButton(
                 icon: const Icon(GtbIcons.close),
                 color: theme.appColorScheme.onColorEmphasisHigh,

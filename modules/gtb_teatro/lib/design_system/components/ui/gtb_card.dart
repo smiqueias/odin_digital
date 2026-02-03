@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
 import 'package:intersperse/intersperse.dart';
 
 typedef GtbSubCardBadges = GtbBadgesGroup;
@@ -373,8 +372,7 @@ final class _GtbCardBase extends StatelessWidget {
     final hasBadges = badges?.hasContent ?? false;
     final hasContent = content != null;
     final hasFooter = footer?.hasContent() ?? false;
-    final shouldAddSpacingBeforeFooterDivider =
-        hasHeader || hasTopDivider || hasBadges || hasContent;
+    final shouldAddSpacingBeforeFooterDivider = hasHeader || hasTopDivider || hasBadges || hasContent;
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -636,14 +634,7 @@ final class GtbSubCardHeader extends StatelessWidget {
   }
 
   bool hasContent() {
-    return leftOverline != null ||
-        leftTitle != null ||
-        leftCaption != null ||
-        rightOverline != null ||
-        rightTitle != null ||
-        rightCaption != null ||
-        cardCorner != null ||
-        cardImage != null;
+    return leftOverline != null || leftTitle != null || leftCaption != null || rightOverline != null || rightTitle != null || rightCaption != null || cardCorner != null || cardImage != null;
   }
 }
 
@@ -753,8 +744,7 @@ sealed class GtbSubCardCornerKind {
 
   const factory GtbSubCardCornerKind.checkbox(GtbCheckbox checkbox) = GtbSubCardCornerKindCheckbox;
 
-  const factory GtbSubCardCornerKind.radioButton(GtbRadioButton<Object?> radioButton) =
-      GtbSubCardCornerKindRadioButton;
+  const factory GtbSubCardCornerKind.radioButton(GtbRadioButton<Object?> radioButton) = GtbSubCardCornerKindRadioButton;
 
   const factory GtbSubCardCornerKind.badge(GtbBadgeWidget badge) = GtbSubCardCornerKindBadge;
 
@@ -766,8 +756,7 @@ final class GtbSubCardCornerKindCheckbox extends GtbSubCardCornerKind {
 }
 
 final class GtbSubCardCornerKindRadioButton extends GtbSubCardCornerKind {
-  const GtbSubCardCornerKindRadioButton(GtbRadioButton<Object?> radioButton)
-    : super(widget: radioButton);
+  const GtbSubCardCornerKindRadioButton(GtbRadioButton<Object?> radioButton) : super(widget: radioButton);
 }
 
 final class GtbSubCardCornerKindBadge extends GtbSubCardCornerKind {
@@ -958,9 +947,7 @@ final class GtbSubCardDetailTwoColumns extends GtbSubCardDetail {
 }
 
 final class GtbSubCardDetailList extends GtbSubCardDetail {
-  const GtbSubCardDetailList(this.rows, {super.key})
-    : assert(rows.length >= 2, 'GtbSubCardDetailKindList must have at least two list rows'),
-      assert(rows.length <= 12, 'GtbSubCardDetailKindList must have at most twelve list rows');
+  const GtbSubCardDetailList(this.rows, {super.key}) : assert(rows.length >= 2, 'GtbSubCardDetailKindList must have at least two list rows'), assert(rows.length <= 12, 'GtbSubCardDetailKindList must have at most twelve list rows');
 
   final List<GtbSubCardDetailListRow> rows;
 

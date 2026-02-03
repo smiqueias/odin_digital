@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
-import 'package:gtb_teatro/design_system/models/semantics_data.dart';
 
 enum GtbLinkKind {
   neutral,

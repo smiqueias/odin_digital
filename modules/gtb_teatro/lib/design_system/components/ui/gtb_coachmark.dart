@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:gtb_teatro/design_system/gtb_teatro.dart';
-import 'package:gtb_teatro/design_system/models/action_settings.dart';
 
 class GtbCoachmark extends StatelessWidget {
   const GtbCoachmark({
