@@ -1,4 +1,4 @@
-name: gtb_digital
+name: odin_digital
 
 packages:
   - modules/*

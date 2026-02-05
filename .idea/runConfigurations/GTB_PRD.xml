@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GTB PRD" type="FlutterRunConfigurationType" factoryName="Flutter">
     <option name="additionalArgs" value="--dart-define=ENV=prd" />
-    <option name="filePath" value="$PROJECT_DIR$/modules/gtb_app/lib/main.dart" />
+    <option name="filePath" value="$PROJECT_DIR$/modules/odin_app/lib/main.dart" />
     <method v="2" />
   </configuration>
 </component>

@@ -1,0 +1,40 @@
+name: odin_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.0
+  flutter: ^3.38.6
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  odin_core:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_core
+  odin_teatro:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_teatro
+  odin_home:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_home
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  odin_analysis_options:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_analysis_options
+
+flutter:
+  uses-material-design: true

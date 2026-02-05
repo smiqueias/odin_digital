@@ -1,0 +1,28 @@
+name: odin_home
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.10.0
+  flutter: ^3.38.6
+
+dependencies:
+  flutter:
+    sdk: flutter
+  odin_core:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  odin_analysis_options:
+    git:
+      url: https://github.com/smiqueias/odin_digital
+      ref: dev
+      path: modules/odin_analysis_options
+
+flutter:
