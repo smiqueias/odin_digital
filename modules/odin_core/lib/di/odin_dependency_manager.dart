@@ -8,7 +8,7 @@ final class OdinDependencyManager implements DependencyManager {
 
   static OdinDependencyManager get instance => _instance;
 
-  GetIt get _getIt => GetIt.asNewInstance();
+  GetIt get _getIt => GetIt.I;
 
   @override
   void factory<T extends Object>(T Function() factoryBuilder) {
