@@ -1,6 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:odin_core/contracts/dependency_manager.dart';
 
+final DM = OdinDependencyManager.instance;
+
 final class OdinDependencyManager implements DependencyManager {
   OdinDependencyManager._();
 
