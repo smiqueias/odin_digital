@@ -6,3 +6,45 @@ formatters:
     line_length: 1000
     page_width: 1000
     prefer_single_quotes: true
+
+linter:
+  rules:
+    # ── Const ────────────────────────────────────────────────────────────────
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - unnecessary_const
+
+    # ── Strings ──────────────────────────────────────────────────────────────
+    - prefer_single_quotes
+
+    # ── Construtores ─────────────────────────────────────────────────────────
+    - use_super_parameters         # use super.param em vez de this.param
+    - sort_constructors_first      # construtor sempre antes de métodos (campos ficam no topo naturalmente)
+
+    # ── Tipos de retorno ─────────────────────────────────────────────────────
+    - always_declare_return_types  # toda função deve declarar retorno explícito
+    - avoid_void_async             # evita async sem retorno útil
+
+    # ── Imutabilidade ────────────────────────────────────────────────────────
+    - prefer_final_fields          # campos que não mudam devem ser final
+    - prefer_final_locals          # variáveis locais que não mudam devem ser final
+    - prefer_final_parameters      # parâmetros que não mudam devem ser final
+
+    # ── Flutter / Widgets ────────────────────────────────────────────────────
+    - use_key_in_widget_constructors   # sempre passe Key em widgets
+    - sized_box_for_whitespace         # use SizedBox em vez de Container vazio para espaçamento
+    - avoid_unnecessary_containers     # não envolva widgets em Container sem necessidade
+    - sort_child_properties_last       # child/children sempre por último nos widgets
+
+    # ── Qualidade geral ──────────────────────────────────────────────────────
+    - avoid_print                  # sem print em produção
+    - avoid_empty_else             # sem else vazio
+    - avoid_returning_null_for_void
+    - cancel_subscriptions         # sempre cancele StreamSubscription
+    - close_sinks                  # sempre feche Sinks
+    - unawaited_futures            # não ignore Futures sem await
+    - prefer_is_empty              # list.isEmpty em vez de list.length == 0
+    - prefer_is_not_empty          # list.isNotEmpty em vez de list.length != 0
+    - eol_at_end_of_file           # nova linha ao final de cada arquivo
