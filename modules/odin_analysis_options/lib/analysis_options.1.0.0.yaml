@@ -1,2 +1,8 @@
 formatter:
   trailing_commas: preserve
+
+formatters:
+  dart:
+    line_length: 1000
+    page_width: 1000
+    prefer_single_quotes: true
